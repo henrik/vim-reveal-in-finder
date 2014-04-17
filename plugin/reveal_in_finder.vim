@@ -1,8 +1,3 @@
-if exists("g:loaded_reveal_in_finder")
-  finish
-endif
-let g:loaded_reveal_in_finder = 1
-
 function! s:RevealInFinder()
   if filereadable(expand("%"))
     let l:command = "open -R %"
