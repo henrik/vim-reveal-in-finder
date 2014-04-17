@@ -4,7 +4,13 @@ endif
 let g:loaded_reveal_in_finder = 1
 
 function! s:RevealInFinder()
-  silent! ! open -R % || open %:p:h || open .
+  let s:command = ""
+  if filereadable(expand("%"))
+    let s:command = "open -R %"
+  else
+    let s:command = "open ."
+  endif
+  execute ':silent! !' . s:command
   " For terminal Vim not to look messed up.
   redraw!
 endfunction
