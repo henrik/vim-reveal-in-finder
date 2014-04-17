@@ -7,7 +7,7 @@ function! s:RevealInFinder()
     let l:command = "open ."
   endif
 
-  execute ':silent! !' . l:command
+  execute ":silent! !" . l:command
 
   " For terminal Vim not to look messed up.
   redraw!
