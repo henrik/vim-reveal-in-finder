@@ -1,8 +1,8 @@
 function! s:RevealInFinder()
   if filereadable(expand("%"))
-    let l:command = "open -R %"
+    let l:command = "open -R " . shellescape("%")
   elseif getftype(expand("%:p:h")) == "dir"
-    let l:command = "open %:p:h"
+    let l:command = "open " . shellescape("%") . ":p:h"
   else
     let l:command = "open ."
   endif
